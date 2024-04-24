@@ -1,0 +1,81 @@
+.tablero-pitarra-container{
+    height: calc(100vw*0.647);
+    width: 100vw;
+    background: url("../assets/img/pitarra-madera.jpg");
+    background-size: auto 100%;
+    box-shadow: 0 0 10px #000000;
+    border: 1px solid #000000;
+}
+
+.buttons-container{
+    width: 100vw;
+    height: calc(100vw*0.647);
+    display: grid;
+    grid-template-columns: 10% 15% 15% 20% 15% 15% 10%;
+    grid-template-rows: 15% 10% 15% 20% 15% 10% 15%;
+}
+
+
+.ficha-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ficha-button{
+    all: unset;
+    /* opacity: 0.5; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.ficha-roja{
+    height: 10vw;
+    width: 10vw;
+    object-fit: contain;
+    position: absolute;
+    opacity: 0;
+}
+
+.ficha-amarilla{
+    height: 10vw;
+    width: 10vw;
+    object-fit: contain;
+    position: absolute;
+    opacity: 0;
+}
+.mostrador-turno{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mostrador-turno > header{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.mostrador-fichas-container{
+    width: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.ficha-amarilla-mostrador{
+    opacity: 1;
+}
+
+/* .cord{
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000;
+    z-index: 10;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} */

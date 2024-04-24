@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitarra</title>
+    <link rel="icon" href="src/assets/img/pitarra-icon.png">
+    <link rel="stylesheet" href="src/css/inicio.css">
+    <script src="src/js/inicio-buttons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="header-header">
+        <nav class="header-nav">
+            <div class="header-img-container">
+                <img src="src/assets/img/pitarra-icon.png" alt="pitarra-icon" class="header-img">
+            </div>
+            <ul class="header-nav-ul">
+                <li class="header-nav-li">Iniciar Sesion</li>
+                <li class="header-nav-li">Registrarse</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="inicio-main">
+        <h1 class="inicio-h1">Pitarra</h1>
+        <article class="inicio-info-article">
+            <h2 class="inicio-info-h2">¿Qué es la pitarra?</h2>
+            <p class="inicio-info-p">La pitarra es un juego autóctono mexicano que se juega entre dos personas con 3 fichas cada uno, en un tablero con forma cuadrada y líneas marcadas. El objetivo es que los jugadores muevan sus fichas de manera alternada por las líneas del tablero hasta completar una tercia de fichas.</p>
+            <div class="inicio-info-btn-container">
+                <h2 class="inicio-info-h2">¿Cómo se juega la pitarra?</h2>
+                <button aria-label="Obtener información sobre cómo se juega la pitarra" class="inicio-info-btn" id="ver-info-pitarra-btn">Ver</button>
+            </div>
+        </article>
+        <section class="inicio-jugar-section">
+            <article class="inicio-jugar-article">
+                <div>
+                    <div>
+                        <h3 class="inicio-jugarcard-h3">Jugar en linea</h3>
+                        <p class="inicio-jugarcard-p">Jugar con otros jugadores online</p>
+                    </div>
+                    <img src="src/assets/img/multiplayer.png" alt="multiplayer">
+                </div>
+                <button aria-label="Jugar pitarra online" class="inicio-jugarcard-btn" id="jugar-online-btn">Jugar</button>
+            </article>
+            <article class="inicio-jugar-article">
+                <div>
+                    <div>
+                        <h3 class="inicio-jugarcard-h3">Jugar con amigos</h3>
+                        <p class="inicio-jugarcard-p">Jugar en el mismo dispositivo</p>
+                    </div>
+                    <img src="src/assets/img/offline-game.png" alt="offline-game" class="inicio-jugar-img">
+                </div>
+                <button aria-label="Jugar pitarra offline" class="inicio-jugarcard-btn" id="jugar-offline-btn">Jugar</button>
+            </article>
+        </section>
+    </main>
+    <footer class="inicio-footer">
+        <article class="inicio-footer-article">
+            © Jesus Cuapio 2024
+        </article>
+    </footer>
+</body>
+</html>
