@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded',()=>{
     const host = 'http://jesus.servehttp.com:3000';
-    document.getElementById('register-form').addEventListener('submit',async(e)=>{
+    document.getElementById('login-form').addEventListener('submit',async (e)=>{
         e.preventDefault();
-        console.log(e.target.username.value)
-        const res = await fetch(`${host}/api/register`,{
+        console.log(e.target.username.value);
+        const res = await fetch(`${host}/api/login`,{
             method:"POST",
             headers:{"Content-Type" : "application/json"},
             body: JSON.stringify({
@@ -19,18 +19,18 @@ document.addEventListener('DOMContentLoaded',()=>{
                 text : resJson.mensaje,
                 icon: "error",
                 confirmButtonColor: '#1f5df1'
-              });
-            console.log("Error en el registro"); 
+              }); 
             return
         }
-        else{
-            Swal.fire({
-                title: "Tu cuenta se ha creado correctamente",
-                icon: "success",
-                confirmButtonColor: '#1f5df1'
-            }).then(result=>{
-                window.location.href = host;
-            });
-        }
+        const resJson = await res.json();
+        Swal.fire({
+            title: "Sesion iniciada correctamente",
+            icon: "success",
+            timer: 5000,
+            timerProgressBar: true,
+            confirmButtonColor: '#1f5df1'
+        }).then(()=>{
+            window.location.href = resJson.redirect;
+        });
     })
 })

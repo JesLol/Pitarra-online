@@ -10,8 +10,15 @@
     justify-content: space-between;
 }
 
+.register-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .register-main-section {
     background: #eff6ff;
+    width: 100%;
     margin: 20px;
     padding: 10px;
     border: 1px solid #a6b2c4;
@@ -21,6 +28,7 @@
     flex-direction: column;
     align-items: center;
     min-width: 140px;
+    max-width: 500px;
 }
 
 .register-h1{
@@ -81,6 +89,7 @@
     padding: var(--button-padding);
     border-radius: 8px;
     cursor: pointer;
+    color: #ffffff;
 }
 
 .register-footer{
