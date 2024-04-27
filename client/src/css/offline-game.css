@@ -9,6 +9,9 @@
     height: 100vh;
     width: 100vw;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .offline-main{
@@ -70,9 +73,6 @@
 
 .offline-footer{
     width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
 }
 
 .offline-footer-article{
