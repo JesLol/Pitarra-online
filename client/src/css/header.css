@@ -22,7 +22,20 @@
     padding: 8px;
     border: 1px solid #ffffff;
     border-radius: 5px;
+}
+/* Aqui no se hace un header-nav-li > li por si se tiene que poner otra etiqueta en el nav que no sea un boton*/
+.go-login-btn{
+    border: none;
+    background: none;
     color: #ffffff;
+    cursor: pointer;
+}
+
+.go-register-btn{
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .header-img{

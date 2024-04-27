@@ -68,10 +68,15 @@
     width: 50px;
 }
 
-.offline-footer-article{
+.offline-footer{
     width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.offline-footer-article{
     color: #ffffff7a;
-    position: absolute;
     padding: 20px 0;
     display: flex;
     justify-content: center;
