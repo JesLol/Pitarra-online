@@ -38,6 +38,17 @@
     cursor: pointer;
 }
 
+#close-sesion-btn-li{
+    display: none;
+}
+
+.sesion-register-btn{
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
 .header-img{
     height: 50px;
     width: 50px;

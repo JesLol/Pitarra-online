@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pitarra</title>
-    <link rel="icon" href="../ assets/img/pitarra-icon.png">
+    <link rel="icon" href="../assets/img/pitarra-icon.png">
     <link rel="stylesheet" href="../css/inicio.css">
 </head>
 <body>
     Hola mundo xd
+    <script type="module">
+        import {io} from 'https://cdn.socket.io/4.3.2/socket.io.esm.min.js'
+        const cookies = document.cookie;
+        const cookiesObj = cookies.split(';').reduce((acc, cookie) => {
+            const [name, value] = cookie.trim().split('=');
+            acc[name] = value;
+            return acc;
+        }, {});
+        const token = cookiesObj['jwt'];
+        const socket = io({
+            auth: {
+                token: token
+            }
+        })
+    </script>
 </body>
 </html>
