@@ -11,13 +11,47 @@ document.addEventListener("DOMContentLoaded",()=>{
         return acc;
     }, {});
     const miCookie = cookiesObj['jwt'];
-    if(miCookie){
+    if(miCookie){ //Entra aqui solo cuando la sesion este inicianda
+        let room = "";
         document.getElementById('login-btn-li').style.display = "none";
         document.getElementById('register-btn-li').style.display = "none";
         document.getElementById('close-sesion-btn-li').style.display = "block";
-        jugarOnlineBtn.addEventListener('click',()=>{
-            window.location.href = "online-game/"
+        jugarOnlineBtn.addEventListener('click',()=>{ //Entra aqui solo en caso de que la sesion este iniciada
+            Swal.fire({
+                title: "Elije la sala",
+                html: `
+                <p class="room-error">Elije primero una sala</p>
+                <ul class="rooms-ul">
+                    <li><button id="room1" class="choose-room-btn">Sala 1</button></li>
+                    <li><button id="room2" class="choose-room-btn">Sala 2</button></li>
+                    <li><button id="room3" class="choose-room-btn">Sala 3</button></li>
+                    <li><button id="room4" class="choose-room-btn">Sala 4</button></li>
+                    <li><button id="room5" class="choose-room-btn">Sala 5</button></li>
+                </ul>
+                `
+            }).then(()=>{
+                if(room==""){
+                    Swal.fire({
+                        title: "Elije una sala primero"
+                    })
+                }else{
+                    localStorage.setItem("roomChoosen", room)
+                    window.location.href = "online-game/"
+                }
+            })
+            //Cuando se presiona un boton se elija una sala distinta 
+            function botonPresionado(e){
+                room = e.target.id;
+                console.log(room)
+            }
+            //Botones para elejir sala
+            document.getElementById('room1').addEventListener('click',botonPresionado);
+            document.getElementById('room2').addEventListener('click',botonPresionado);
+            document.getElementById('room3').addEventListener('click',botonPresionado);
+            document.getElementById('room4').addEventListener('click',botonPresionado);
+            document.getElementById('room5').addEventListener('click',botonPresionado);
         });
+        //Boton de cerrar sesion
         closeSessionBtn.addEventListener('click',()=>{
             document.cookie ='jwt=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             document.location.href = "/"

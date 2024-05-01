@@ -5,23 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pitarra</title>
     <link rel="icon" href="../assets/img/pitarra-icon.png">
-    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/offline-game.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/d49bde6e64.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/online-game.css">
 </head>
-<body>
-    Hola mundo xd
+<body class="offline-body">
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 class="waiting-h3">Esperando rival</h3>
+            <div>
+                <img src="../assets/img/loading.gif" alt="loading" class="waiting-gif">
+            </div>
+        </div>
+    </div>
+    <header class="header-header">
+        <nav class="header-nav">
+            <div class="header-img-container">
+                <img src="../assets/img/pitarra-icon.png" alt="pitarra-icon" class="header-img">
+            </div>
+            <ul class="header-nav-ul">
+                <li class="header-nav-li" id="close-sesion-btn-li"><button aria-label="cerrar-sesion" id="close-sesion-btn" class="sesion-register-btn">Cerrar sesion</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="offline-main">
+        <section class="modo-container">
+            <button aria-label="ir atras" class="go-gack-btn" id="go-back-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            <h1 class="modo-de-juego">Partida en linea</h1>
+        </section>
+        <section class="section-game-container">
+            <div class="jugadores-container">
+                <img src="../assets/img/user-icon.png" alt="user" class="jugadores-icon">
+                <p class="jugador-span" id="jugador1">Jugador 1</p>
+                <img src="../assets/img/ficha-amarilla.png" alt="ficha-amarilla" class="ficha-mostrador-player">
+            </div>
+            <div class="tablero-pitarra-container">
+                <div class="buttons-container">
+                    <div class="ficha-button-container"><button class="ficha-button" id="2"></button></div>
+                    <div></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="1"></button></div>
+                    <div></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="8"></button></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="4"></button></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="3"></button></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="10"></button></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="6"></button></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="5"></button></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="12"></button></div>
+                    <div></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="19"></button></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="21"></button></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="23"></button></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="11"></button></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="9"></button></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="7"></button></div>
+                    <div></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="24"></button></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="17"></button></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="18"></button></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="22"></button></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="15"></button></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="16"></button></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="20"></button></div>
+                    <div></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="13"></button></div>
+                    <div></div>
+                    <div></div>
+                    <div class="ficha-button-container"><button class="ficha-button" id="14"></button></div>
+                </div>
+            </div>
+            <div class="jugadores-container">
+                <img src="../assets/img/user-icon.png" alt="user" class="jugadores-icon">
+                <p class="jugador-span" id="jugador2">Jugador 2</p>
+                <img src="../assets/img/ficha-roja.png" alt="ficha-roja" class="ficha-mostrador-player">
+            </div>
+        </section>
+        <article class="mostrador-turno" id="mostrador-turno">
+            <header class="mostrador-turno-header">Turno:</header>
+            <section class="mostrador-fichas-container">
+                <img src="../assets/img/ficha-roja.png" id="mostrador-ficha-roja" alt="ficha-roja" class="ficha-roja ficha-roja-mostrador">
+                <img src="../assets/img/ficha-amarilla.png" id="mostrador-ficha-amarilla" alt="ficha-amarilla" class="ficha-amarilla ficha-amarilla-mostrador">
+            </section>
+        </article>
+    </main>
+    <footer class="offline-footer">
+        <article class="offline-footer-article">
+            © Jesus Cuapio 2024
+            <button id="boton">Hola servidor</button>
+        </article>
+    </footer>
     <script type="module">
         import {io} from 'https://cdn.socket.io/4.3.2/socket.io.esm.min.js'
-        const cookies = document.cookie;
+        const cookies = document.cookie; //Obtiene el jwt para ver si es correcto
         const cookiesObj = cookies.split(';').reduce((acc, cookie) => {
             const [name, value] = cookie.trim().split('=');
             acc[name] = value;
             return acc;
         }, {});
         const token = cookiesObj['jwt'];
-        const socket = io({
+        document.addEventListener("DOMContentLoaded",()=>{
+            const modal = document.getElementById("modal"); //Ventana de esperando al rival
+            //Establece la conexion ws
+            const socket = io({
             auth: {
-                token: token
-            }
+                token: token,
+                room: localStorage.getItem("roomChoosen")
+            }})
+            //Aqui recibe cuando el servidor indica que la partida esta llena
+            socket.on('usersConn',(msg)=>{
+                console.log("Rival encontrado:")
+                console.log(msg)
+                modal.style.display = "none";
+                document.getElementById("jugador1").innerHTML = msg.player1;
+                document.getElementById("jugador2").innerHTML = msg.player2;
+            })
+
+            socket.on('redirect', ()=>{
+                Swal.fire({
+                    title: "Error al conectarse a la partida.",
+                    icon: "error",
+                    backdrop: 'static',
+                    timer: 5000,
+                    timerProgressBar: true
+                }).then(()=>{
+                    window.location.href="/"
+                })
+            });
+            document.getElementById('boton').addEventListener('click',()=>{socket.emit('mensaje', "Hola servidor")})
+            
         })
     </script>
 </body>

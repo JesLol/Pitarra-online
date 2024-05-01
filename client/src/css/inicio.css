@@ -112,3 +112,8 @@
     font-family: "Titillium Web", sans-serif;
     box-shadow: 0px -2px 5px #0000004b
 }
+
+.room-error{
+    color: #f00;
+    display: none;
+}
